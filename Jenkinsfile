@@ -9,13 +9,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Deploy to Vercel') {
             steps {
-                sh 'vercel --prod --token=$VERCEL_TOKEN --confirm'
+                bat 'vercel --prod --token=%VERCEL_TOKEN% --confirm'
             }
         }
     }
